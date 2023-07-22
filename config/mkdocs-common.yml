@@ -216,6 +216,7 @@ nav:
     - !ENV [NAV_TECHNOLOGY_ESSENTIALS, 'Technology Essentials']:
       - 'basics/passwords-overview.md'
       - 'basics/multi-factor-authentication.md'
+      - 'basics/hardware.md'
       - 'basics/email-security.md'
       - 'basics/vpn-overview.md'
     - !ENV [NAV_ADVANCED_TOPICS, 'Advanced Topics']:
