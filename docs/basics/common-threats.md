@@ -9,13 +9,14 @@ Broadly speaking, we categorize our recommendations into the [threats](threat-mo
 - <span class="pg-purple">:material-incognito: Anonymity</span> - Shielding your online activity from your real identity, protecting you from people who are trying to uncover *your* identity specifically.
 - <span class="pg-red">:material-target-account: Targeted Attacks</span> - Being protected from hackers or other malicious actors who are trying to gain access to *your* data or devices specifically.
 - <span class="pg-orange">:material-bug-outline: Passive Attacks</span> - Being protected from things like malware, data breaches, and other attacks that are made against many people at once.
+- <span class="pg-amber">:material-package-variant-closed-remove: Supply Chain Attacks</span> - A vulnerability or exploit introduced into otherwise good software either directly or through a dependency from a third party.
 - <span class="pg-teal">:material-server-network: Service Providers</span> - Protecting your data from service providers (e.g. with E2EE, which renders your data unreadable to the server).
 - <span class="pg-blue">:material-eye-outline: Mass Surveillance</span> - Protection from government agencies, organizations, websites, and services which work together to track your activities.
 - <span class="pg-brown">:material-account-cash: Surveillance Capitalism</span> - Protecting yourself from big advertising networks, like Google and Facebook, as well as a myriad of other third-party data collectors.
 - <span class="pg-green">:material-account-search: Public Exposure</span> - Limiting the information about you that is accessible online—to search engines or the general public.
 - <span class="pg-blue-gray">:material-close-outline: Censorship</span> - Avoiding censored access to information or being censored yourself when speaking online.
 
-Some of these threats may be more important to you than others, depending on your specific concerns. For example, a software developer with access to valuable or critical data may be primarily concerned with <span class="pg-red">:material-target-account: Targeted Attacks</span>, but they probably still want to protect their personal data from being swept up in <span class="pg-blue">:material-eye-outline: Mass Surveillance</span> programs. Similarly, many people may be primarily concerned with <span class="pg-green">:material-account-search: Public Exposure</span> of their personal data, but they should still be wary of security-focused issues, such as <span class="pg-orange">:material-bug-outline: Passive Attacks</span>—like malware affecting their devices.
+Some of these threats may be more important to you than others, depending on your specific concerns. For example, a software developer with access to valuable or critical data may be primarily concerned with <span class="pg-amber">:material-package-variant-closed-remove: Supply Chain Attacks</span> and <span class="pg-red">:material-target-account: Targeted Attacks</span>. They will likely still want to protect their personal data from being swept up in <span class="pg-blue">:material-eye-outline: Mass Surveillance</span> programs. Similarly, many people may be primarily concerned with <span class="pg-green">:material-account-search: Public Exposure</span> of their personal data, but they should still be wary of security-focused issues, such as <span class="pg-orange">:material-bug-outline: Passive Attacks</span>—like malware affecting their devices.
 
 ## Anonymity vs. Privacy
 
@@ -56,6 +57,26 @@ By design, **web browsers**, **email clients**, and **office applications** typi
 </div>
 
 If you are concerned about **physical attacks** you should use an operating system with a secure verified boot implementation, such as Android, iOS, macOS, or [Windows (with TPM)](https://learn.microsoft.com/windows/security/information-protection/secure-the-windows-10-boot-process). You should also make sure that your drive is encrypted, and that the operating system uses a TPM or Secure [Enclave](https://support.apple.com/guide/security/secure-enclave-sec59b0b31ff/1/web/1) or [Element](https://developers.google.com/android/security/android-ready-se) to rate limit attempts to enter the encryption passphrase. You should avoid sharing your computer with people you don't trust, because most desktop operating systems don't encrypt data separately per-user.
+
+<span class="pg-amber">:material-package-variant-closed-remove: Supply Chain</span>
+
+Supply chain attacks are a type of <span class="pg-orange">:material-bug-outline: Passive Attack</span> which can be part of a larger <span class="pg-red">:material-target-account: Targeted Attack</span>.
+
+There are few ways in which this type of attack might be carried out:
+
+1. A contributor or employee might work their way into a position of power within an organization and then abuse that position to add some malicious code.
+2. A developer may be coerced by an outside party to add malicious code.
+3. An individual or group might identify a third party software dependency (also known as a library) and work to infiltrate it with the above two methods, knowing that it will be used by "downstream" software developers.
+
+These sorts of attacks can require a lot of time and preparation to perform and are risky because they can be detected, particularly in open source projects if they are popular and have outside interest. Unfortunately they're also one of the most dangerous as they can never be entirely mitigated. We would encourage readers only use software which has a good reputation and makes an effort to reduce risk by:
+
+1. Only adopting popular software that has been around for a while. The more interest in a project the, the greater likelihood that external parties will notice malicious changes. A malicious actor will also need to spend more time gaining community trust with meaningful contributions.
+2. Automated build infrastructure for released binary code reduces the attack surface such as, a compromised developer workstation or breached server. It provides accountability to others involved in the project in that binaries are produced from a central source code repository.
+3. Code signing on individual commits and releases increases an auditable trail of who did what. For example: Was the malicious code in the software repository? Which developer added it? Was it added during the build process?
+4. In open source projects the code should have commit messages which are explain exactly what the associated code does. This makes it easier for external parties to verify and detect if the code doesn't match the description.
+5. The number of contributors or maintainers, a lone developer may be more
+susceptible to being coerced or forced into adding malicious code by an external party.
+6. Economical pressure that would occur if a company was involved with negligent behavior that enabled malicious code to be added. This may very well mean software developed by "Big Tech" has more scrutiny than a lone developer who doesn't answer to anyone.
 
 ## Privacy From Service Providers
 
