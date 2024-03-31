@@ -12,9 +12,12 @@ The internals of your devices process and store all of your digital data. It is 
 
 ### Hardware Security Programs
 
-[Windows Secured-core PCs](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-highly-secure-11) meet a higher security criteria specified by Microsoft. These protections aren't only applicable to Windows users; Users of other operating systems can still take advantage of things like [DMA protection](https://learn.microsoft.com/en-us/windows/security/information-protection/kernel-dma-protection-for-thunderbolt) and the ability to completely distrust Microsoft certificates.
+Some devices will have a "hardware security program", which is a collaboration between vendors on best practices and recommendations when designing hardware, for example:
 
-Macs have [great hardware security](../os/macos-overview.md), but many of the hardware security features rely on macOS to function properly. Third party, like Linux won't necessarily have the require drivers to operate the secure hardware features. Therefore we suggest that if you plan to run macOS you should do so on official Apple hardware. Similarly, ChromeOS's security is at its best when run on a Chromebook.
+- [Windows Secured-core PCs](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-highly-secure-11) meet a higher security criteria specified by Microsoft. These protections aren't only applicable to Windows users; Users of other operating systems can still take advantage of features like [DMA protection](https://learn.microsoft.com/en-us/windows/security/information-protection/kernel-dma-protection-for-thunderbolt) and the ability to completely distrust Microsoft certificates.
+- [Android Ready SE](https://developers.google.com/android/security/android-ready-se) which is a collaboration between vendors to ensure their devices follow [best practices](https://source.android.com/docs/security/best-practices/hardware) and include tamper resistant hardware backed storage for things like encryption keys.
+- macOS running on Apple hardware have [hardware security](../os/macos-overview.md) which may not be available with third party operating systems.
+- [ChromeOS security](https://www.chromium.org/chromium-os/developer-library/reference/security/security-whitepaper) is at it's best when running on a Chromebook as it is able to make use of hardware features available such as the [hardware root-of-trust](https://www.chromium.org/chromium-os/developer-library/reference/security/security-whitepaper/#hardware-root-of-trust-and-verified-boot).
 
 ### Preinstalled OS
 
