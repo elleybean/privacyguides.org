@@ -64,11 +64,11 @@ Supply chain attacks are a type of <span class="pg-orange">:material-bug-outline
 
 There are few ways in which this type of attack might be carried out:
 
-1. A contributor or employee might work their way into a position of power within an organization and then abuse that position to add some malicious code.
+1. A contributor or employee might work their way into a position of power within a project or organization, then abuse that position by adding malicious code.
 2. A developer may be coerced by an outside party to add malicious code.
 3. An individual or group might identify a third party software dependency (also known as a library) and work to infiltrate it with the above two methods, knowing that it will be used by "downstream" software developers.
 
-These sorts of attacks can require a lot of time and preparation to perform and are risky because they can be detected, particularly in open source projects if they are popular and have outside interest. Unfortunately they're also one of the most dangerous as they can never be entirely mitigated. We would encourage readers only use software which has a good reputation and makes an effort to reduce risk by:
+These sorts of attacks can require a lot of time and preparation to perform and are risky because they can be detected, particularly in open source projects if they are popular and have outside interest. Unfortunately they're also one of the most dangerous as they are very hard to mitigate entirely. We would encourage readers only use software which has a good reputation and makes an effort to reduce risk by:
 
 1. Only adopting popular software that has been around for a while. The more interest in a project the, the greater likelihood that external parties will notice malicious changes. A malicious actor will also need to spend more time gaining community trust with meaningful contributions.
 2. Automated build infrastructure for released binary code reduces the attack surface such as, a compromised developer workstation or breached server. It provides accountability to others involved in the project in that binaries are produced from a central source code repository.
